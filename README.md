@@ -34,7 +34,7 @@ To get a local copy up and running, follow these simple steps:
 
 ## Built With
 
-- [React.js](https://reactjs.org/) - The web framework used for building the user interface.
+- [ReactJS](https://reactjs.org/) - The web framework used for building the user interface.
 - [ASP.NET Core Web API](https://dotnet.microsoft.com/apps/aspnet/apis) - The backend framework used for server-side logic and API development.
 - [MySQL](https://www.mysql.com/) - The database platform used for data storage and management.
 

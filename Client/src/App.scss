@@ -1,6 +1,8 @@
 // Defining Variables
 $primary: #0e274f;
 $secondary: #1d58b4;
+$teritary: #8c8c8c;
+$orange: orange;
 $black: #100e17;
 $lightBlue: #eeeeff;
 $blueGradient: linear-gradient(100deg, #1d58b4 100%, #0e274f 100%);
@@ -72,8 +74,19 @@ a {
 }
 
 .secondaryText {
-  color: rgb(140, 140, 140);
+  color: $secondary;
+  font-size: 1.4rem;
+}
+
+.teritaryText {
+  color: $teritary;
   font-size: 0.9rem;
+}
+
+.orangeText {
+  color: $orange;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 // Button Styles

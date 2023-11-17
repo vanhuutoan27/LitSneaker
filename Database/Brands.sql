@@ -1,0 +1,4 @@
+CREATE TABLE Brands (
+    BrandID INT IDENTITY PRIMARY KEY,
+    BrandName VARCHAR(100) NOT NULL
+);
