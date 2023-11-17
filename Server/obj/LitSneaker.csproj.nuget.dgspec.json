@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\myWorkSpace\\myProjects\\LitSneaker\\Server\\LitSneaker\\LitSneaker.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\myWorkSpace\\myProjects\\LitSneaker\\Server\\LitSneaker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\myWorkSpace\\myProjects\\LitSneaker\\Server\\LitSneaker\\LitSneaker.csproj": {
+    "C:\\Users\\Admin\\Desktop\\myWorkSpace\\myProjects\\LitSneaker\\Server\\LitSneaker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\myWorkSpace\\myProjects\\LitSneaker\\Server\\LitSneaker\\LitSneaker.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\myWorkSpace\\myProjects\\LitSneaker\\Server\\LitSneaker.csproj",
         "projectName": "LitSneaker",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\myWorkSpace\\myProjects\\LitSneaker\\Server\\LitSneaker\\LitSneaker.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\myWorkSpace\\myProjects\\LitSneaker\\Server\\LitSneaker.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\myWorkSpace\\myProjects\\LitSneaker\\Server\\LitSneaker\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\myWorkSpace\\myProjects\\LitSneaker\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

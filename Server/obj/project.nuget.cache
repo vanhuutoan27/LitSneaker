@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RLUGyP8U2As8gcPm1yk9Ot9ogQPGNKU+Lb+ybgfwxOiFE+DY0INVIAv6C16pDvO9fDLSsbx/+c9/dIXqcVPAoQ==",
+  "dgSpecHash": "iqi8C7KiKsKgoVtN0kQfMSnZDJ81zLYMebIq6DsN0d65esEQxN00s8/kLDVdNIpUNOF/ItCnwPkvl+gq8l2XNA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\myWorkSpace\\myProjects\\LitSneaker\\Server\\LitSneaker\\LitSneaker.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\myWorkSpace\\myProjects\\LitSneaker\\Server\\LitSneaker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
