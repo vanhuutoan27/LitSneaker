@@ -1,0 +1,119 @@
+// Defining Variables
+$primary: #0e274f;
+$secondary: #1d58b4;
+$black: #100e17;
+$lightBlue: #eeeeff;
+$blueGradient: linear-gradient(100deg, #1d58b4 100%, #0e274f 100%);
+$shadow: 0px 23px 21px -8px rgba(136, 160, 255, 0.25);
+
+// Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Utility Classes
+.paddings {
+  padding: 1.5rem;
+}
+
+.innerWidth {
+  width: 100%;
+}
+
+// Flex Classes
+.flexCenter {
+  display: flex;
+  row-gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flexStart {
+  @extend .flexCenter;
+  justify-content: flex-start;
+}
+
+.flexEnd {
+  @extend .flexCenter;
+  justify-content: flex-end;
+}
+
+.flexColCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flexColStart {
+  @extend .flexColCenter;
+  align-items: flex-start;
+}
+
+.flexColEnd {
+  @extend .flexColCenter;
+  align-items: flex-end;
+}
+
+// Text Classes
+.primaryText {
+  color: $primary;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.secondaryText {
+  color: rgb(140, 140, 140);
+  font-size: 0.9rem;
+}
+
+// Button Styles
+.btn {
+  font-weight: 500;
+  padding: 0.6rem 1.4rem;
+  color: white;
+  background: $blueGradient;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+}
+
+// Media Queries
+@media (min-width: 1536px) {
+  .innerWidth {
+    max-width: 1280px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 640px) {
+  .paddings {
+    padding: 4rem;
+  }
+}
+
+@media (min-width: 1280px), (min-width: 768px) {
+  .paddings {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .primaryText {
+    font-size: 1.5rem;
+  }
+}
