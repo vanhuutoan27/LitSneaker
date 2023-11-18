@@ -1,12 +1,9 @@
 // Defining Variables
-$primary: #0e274f;
-$secondary: #1d58b4;
-$teritary: #8c8c8c;
-$orange: orange;
-$black: #100e17;
-$lightBlue: #eeeeff;
-$blueGradient: linear-gradient(100deg, #1d58b4 100%, #0e274f 100%);
-$shadow: 0px 23px 21px -8px rgba(136, 160, 255, 0.25);
+$primary: #cd4113;
+$secondary: #cd4113;
+$text: #7a7a7a;
+$black: #070601;
+$white: #eeeeff;
 
 // Base Styles
 * {
@@ -78,30 +75,32 @@ a {
   font-size: 1.4rem;
 }
 
-.teritaryText {
-  color: $teritary;
-  font-size: 0.9rem;
-}
-
-.orangeText {
-  color: $orange;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
 // Button Styles
 .btn {
-  font-weight: 500;
-  padding: 0.6rem 1.4rem;
-  color: white;
-  background: $blueGradient;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px 40px;
+  background: $secondary;
+  color: $white;
   border: none;
+  outline: none;
   border-radius: 8px;
-  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
-    cursor: pointer;
-    transform: scale(1.05);
+    background-color: lighten($secondary, 10%);
+  }
+
+  &:active {
+    background-color: darken($secondary, 10%);
+    box-shadow: 0 0 0px 4px rgba(205, 65, 19, 0.5);
+  }
+
+  &:disabled {
+    background-color: desaturate($secondary, 20%);
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 }
 

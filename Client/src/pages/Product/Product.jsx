@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+
+import Layout from '../../utils/Layout';
 
 function Product() {
   return (
-    <div>Product</div>
-  )
+    <Layout>
+      <div>Product</div>
+    </Layout>
+  );
 }
 
-export default Product
+export default Product;

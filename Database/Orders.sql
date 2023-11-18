@@ -1,7 +1,0 @@
-CREATE TABLE Orders (
-    OrderID INT IDENTITY PRIMARY KEY,
-    CustomerID INT,
-    OrderDate DATE NOT NULL DEFAULT CONVERT(DATE, GETDATE()),
-    Status VARCHAR(50),
-    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
-);

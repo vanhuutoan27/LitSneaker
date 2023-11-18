@@ -1,8 +1,0 @@
-CREATE TABLE Customers (
-    CustomerID INT IDENTITY PRIMARY KEY,
-    DateCreated DATE NOT NULL DEFAULT CONVERT(DATE, GETDATE()),
-    Name VARCHAR(100) NOT NULL,
-    Address VARCHAR(255),
-    Phone VARCHAR(15),
-    Email VARCHAR(100)
-);

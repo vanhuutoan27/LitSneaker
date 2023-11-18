@@ -16,4 +16,8 @@ public partial class Order
     public virtual Customer? Customer { get; set; }
 
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
+
+    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
+
+    public virtual ICollection<Shipping> Shippings { get; set; } = new List<Shipping>();
 }

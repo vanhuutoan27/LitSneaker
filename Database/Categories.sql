@@ -1,4 +1,0 @@
-CREATE TABLE Categories (
-    CategoryID INT IDENTITY PRIMARY KEY,
-    CategoryName VARCHAR(100) NOT NULL
-);
