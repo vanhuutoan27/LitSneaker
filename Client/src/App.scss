@@ -10,7 +10,7 @@ $white: #eeeeff;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Kanit', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -75,10 +75,17 @@ a {
   font-size: 1.4rem;
 }
 
+.content {
+  width: 1300px;
+  max-width: calc(100% - 48px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 // Button Styles
 .btn {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
   padding: 16px 40px;
   background: $secondary;
   color: $white;
@@ -89,16 +96,18 @@ a {
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: lighten($secondary, 10%);
+    background: lighten($secondary, 10%);
+    color: lighten($white, 10%);
   }
 
   &:active {
-    background-color: darken($secondary, 10%);
+    background: darken($secondary, 10%);
+    color: darken($white, 1%);
     box-shadow: 0 0 0px 4px rgba(205, 65, 19, 0.5);
   }
 
   &:disabled {
-    background-color: desaturate($secondary, 20%);
+    background: desaturate($secondary, 20%);
     opacity: 0.6;
     cursor: not-allowed;
   }

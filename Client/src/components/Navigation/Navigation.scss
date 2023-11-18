@@ -1,0 +1,37 @@
+@import '../../App.scss';
+
+.navigation-wrapper {
+  width: 100%;
+  position: fixed;
+  margin-top: 32px;
+  z-index: 99;
+
+  .navigation-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1300px;
+    background: #f2f3f5a3;
+    padding: 8px 24px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.2);
+
+    .navigation-menu a {
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  .navigation-customer {
+    display: flex;
+    gap: 12px;
+
+    .navigation-icon {
+      font-size: 32px;
+      margin-top: 4px;
+    }
+  }
+}
