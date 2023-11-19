@@ -1,8 +1,9 @@
 import React from 'react';
+
 import Layout from '../../utils/Layout';
 
-function Contact() {
+function Men() {
   return <Layout></Layout>;
 }
 
-export default Contact;
+export default Men;

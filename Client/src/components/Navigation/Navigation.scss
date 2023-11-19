@@ -2,6 +2,7 @@
 
 .navigation-wrapper {
   width: 100%;
+  min-height: 90px;
   position: fixed;
   margin-top: 32px;
   z-index: 99;
@@ -22,6 +23,15 @@
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 1px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &.active {
+        color: $primary;
+      }
     }
   }
 
@@ -32,6 +42,101 @@
     .navigation-icon {
       font-size: 32px;
       margin-top: 4px;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: $primary;
+        transform: scale(1.1);
+      }
     }
+
+    .navigation-menu-mobile > .navigation-icon {
+      color: $white;
+      background: $primary;
+      font-size: 36px;
+      padding: 0 4px;
+      margin-right: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: $black;
+      }
+    }
+  }
+
+  .navigation-sub-menu {
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    background: #fff;
+    margin-top: 20px;
+    transform: translateY(-10%);
+    transition: visibility 0s, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    ul {
+      a {
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        li {
+          list-style: none;
+          padding: 16px 20px 16px 40px;
+
+          &:hover {
+            background: $primary;
+            color: $white;
+          }
+
+          &.active {
+            background: $primary;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0s;
+    }
+  }
+}
+
+// Media Queries
+/* PC */
+@media screen and (min-width: 992px) {
+  .navigation-menu-mobile,
+  .navigation-sub-menu {
+    display: none;
+  }
+}
+
+/* Tablet & mobile */
+@media screen and (max-width: 991px) {
+  .navigation-menu a {
+    display: none;
+  }
+
+  .navigation-menu-mobile {
+    display: block;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .navigation-container {
+    flex-direction: column;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .navigation-container {
+    flex-direction: column;
   }
 }
