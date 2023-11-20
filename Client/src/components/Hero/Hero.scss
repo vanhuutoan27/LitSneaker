@@ -1,45 +1,37 @@
 @import '../../App.scss';
 
 .hero-wrapper {
-  position: relative;
-  padding-bottom: 2rem;
   background-color: transparent;
   background-image: linear-gradient(90deg, #fff 54%, $primary 46%);
-  padding-top: 200px;
-  padding-bottom: 120px;
+  padding: 180px 0 120px 0;
 
   .hero-container {
-    justify-content: space-between;
-    align-items: flex-end;
+    > div {
+      flex: 1;
+    }
 
     .hero-left {
-      gap: 2.4rem;
+      gap: 12px;
 
       .hero-title {
-        position: relative;
-        z-index: 1;
-
-        > h1 {
-          color: $black;
-          text-transform: uppercase;
-          font-weight: 500;
-          font-size: 72px;
-          line-height: 80px;
-          letter-spacing: 10px;
-        }
+        color: $black;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 68px;
+        line-height: 80px;
+        letter-spacing: 10px;
       }
 
       .hero-desc {
         font-weight: 400;
-        font-size: 20px;
+        font-size: 18px;
+        margin-bottom: 20px;
       }
     }
 
     .hero-right {
-      gap: 30px;
-
       .hero-right-col {
-        width: 240px;
+        width: 220px;
         background: #f2f3f5;
         padding: 30px;
         border-radius: 12px;
@@ -47,7 +39,7 @@
 
         h3 {
           color: $black;
-          font-size: 28px;
+          font-size: 24px;
           font-weight: 500;
           text-transform: uppercase;
           line-height: 38px;
@@ -55,27 +47,91 @@
 
         p {
           font-weight: 400;
-          font-size: 20px;
+          font-size: 16px;
         }
 
-        &:first-child {
-          margin-bottom: 240px;
-          margin-right: 120px;
+        &.col-1 {
+          position: absolute;
+          top: 24%;
+          left: 52%;
+        }
+
+        &.col-2 {
+          position: absolute;
+          top: 56%;
+          right: 12%;
         }
       }
-    }
-
-    .image-container {
-      position: absolute;
-      top: 32%;
-      left: 52%;
-      width: 400px;
-      overflow: hidden;
-    }
-
-    .image-container > img {
-      width: 120%;
     }
   }
 }
 
+// Media Queries
+/* PC */
+@media screen and (max-width: 1052px) {
+  .hero-wrapper {
+    .hero-container {
+      .hero-left {
+        .hero-title {
+          font-size: 42px;
+          line-height: 52px;
+          letter-spacing: 2px;
+        }
+
+        .hero-desc {
+          font-size: 16px;
+        }
+      }
+
+      .image-container img {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hero-container {
+    flex-direction: row;
+  }
+}
+
+/* Tablet & mobile */
+@media screen and (max-width: 991px) {
+  .hero-wrapper {
+    .hero-container {
+      .hero-left {
+        .hero-title {
+          font-size: 42px;
+          line-height: 52px;
+          letter-spacing: 2px;
+        }
+
+        .hero-desc {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .image-container img {
+    width: 90%;
+  }
+
+  .hero-right-col {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .hero-wrapper {
+    .hero-container {
+      flex-direction: column;
+    }
+  }
+}
