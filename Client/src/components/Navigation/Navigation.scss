@@ -104,8 +104,8 @@
   }
 
   // Sub-menu visibility for mobile
-  .navigation-sub-menu {
-    opacity: 0;
+  .navigation-sub-menu-mobile {
+    display: none;
     width: 100%;
     background: #fff;
     margin-top: 20px;
@@ -138,7 +138,7 @@
     }
 
     &.show {
-      opacity: 1;
+      display: block;
       transform: translateY(0);
       transition-delay: 0s;
     }
@@ -160,7 +160,7 @@
 /* PC */
 @media screen and (min-width: 992px) {
   .navigation-menu-mobile,
-  .navigation-sub-menu {
+  .navigation-sub-menu-mobile {
     display: none;
   }
 }

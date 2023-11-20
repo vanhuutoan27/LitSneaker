@@ -103,7 +103,7 @@ function Navigation() {
             </Link>
           </div>
         </div>
-        <div className={`navigation-sub-menu ${isMenuOpen ? 'show' : ''}`}>
+        <div className={`navigation-sub-menu-mobile ${isMenuOpen ? 'show' : ''}`}>
           {/* Sub-menu for mobile */}
           <ul>
             <Link to="/men">
