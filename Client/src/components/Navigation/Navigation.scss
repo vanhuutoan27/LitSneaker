@@ -20,20 +20,26 @@
     box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.2);
 
     // Styling for navigation links
-    .navigation-menu a {
-      margin: 0 20px;
-      font-size: 18px;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.2s ease-in-out;
+    .navigation-menu {
+      a {
+        margin: 0 20px;
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.2s ease-in-out;
 
-      &:hover {
-        color: $primary;
-      }
+        &:hover {
+          color: $primary;
+        }
 
-      &.active {
-        color: $primary;
+        &.active {
+          color: $primary;
+        }
+
+        .dropdown {
+          margin-bottom: -4px;
+        }
       }
     }
   }

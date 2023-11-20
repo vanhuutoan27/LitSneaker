@@ -1,15 +1,16 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
-import Home from './pages/Home/Home';
-import Men from './pages/Men/Men';
-import Women from './pages/Women/Women';
-import Kids from './pages/Kids/Kids';
-import Blog from './pages/Blog/Blog';
-import Contact from './pages/Contact/Contact';
+
+import Home from './pages/Guest/Home/Home';
+import Men from './pages/Guest/Men/Men';
+import Women from './pages/Guest/Women/Women';
+import Kids from './pages/Guest/Kids/Kids';
+import Blog from './pages/Guest/Blog/Blog';
+import Contact from './pages/Guest/Contact/Contact';
+import Loading from './pages/Guest/Loading/Loading';
 
 import './App.scss';
-
 
 function App() {
   return (

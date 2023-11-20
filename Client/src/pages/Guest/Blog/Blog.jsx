@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../../utils/Layout';
+import Layout from '../../../utils/Layout';
 
 function Blog() {
   return <Layout></Layout>;
