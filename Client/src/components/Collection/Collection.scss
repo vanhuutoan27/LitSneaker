@@ -1,0 +1,171 @@
+@import '../../App.scss';
+
+.collection-wrapper {
+  padding: 120px 0;
+
+  .collection-title {
+    h2 {
+      color: #070601;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 48px;
+      line-height: 52px;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .collection-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    .collection {
+      position: relative;
+      width: 50%;
+      height: 660px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 12px;
+
+      h3 {
+        position: absolute;
+        color: $white;
+        font-size: 40px;
+        line-height: 38px;
+        text-transform: uppercase;
+        font-weight: 600;
+        z-index: 2;
+      }
+
+      .btn {
+        position: absolute;
+        z-index: 2;
+      }
+
+      &.collection-kids {
+        background-image: url('../../../public/images/kids.jpg');
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.36);
+          border-radius: inherit;
+          z-index: 1;
+        }
+
+        h3 {
+          bottom: 18%;
+          left: 9%;
+        }
+
+        .btn {
+          bottom: 4%;
+          left: 8%;
+        }
+      }
+
+      &.collection-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .collection-men,
+        .collection-women {
+          width: 100%;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.36);
+            border-radius: inherit;
+            z-index: 1;
+          }
+
+          h3 {
+            bottom: 36%;
+            left: 9%;
+          }
+
+          .btn {
+            bottom: 8%;
+            left: 8%;
+          }
+        }
+
+        .collection-men {
+          background-image: url('../../../public/images/men.jpg');
+        }
+
+        .collection-women {
+          background-image: url('../../../public/images/women.jpg');
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+/* PC */
+@media screen and (min-width: 992px) {
+}
+
+/* Tablet & mobile */
+@media screen and (max-width: 991px) {
+  .collection-wrapper {
+    .collection-container {
+      .collection {
+        height: 525px;
+      }
+    }
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .collection-wrapper {
+    .collection-container {
+      flex-direction: column;
+
+      .collection {
+        width: 100%;
+
+        &.collection-kids {
+          height: 275px;
+
+          h3 {
+            bottom: 36%;
+          }
+
+          .btn {
+            bottom: 7%;
+          }
+        }
+
+        &.collection-stack {
+          .collection-men,
+          .collection-women {
+            height: 275px;
+
+            h3 {
+              bottom: 36%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

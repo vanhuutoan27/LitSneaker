@@ -39,15 +39,12 @@ function Navigation() {
       <div className="navigation-wrapper">
         <div className="navigation-container content">
           <div className="navigation-logo">
-            <Link to="#!">
+            <Link to="/">
               <img src="../images/logo/Lit Sneaker Logo5.png" alt="Lit Sneaker" width={100} />
             </Link>
           </div>
           <div className="navigation-menu">
             {/* Navigation links */}
-            <Link to="/" className={isLinkActive('/')}>
-              Home
-            </Link>
             <Link to="/men" className={isLinkActive('/men')}>
               Men
             </Link>
@@ -92,9 +89,6 @@ function Navigation() {
         <div className={`navigation-sub-menu ${isMenuOpen ? 'show' : ''}`}>
           {/* Sub-menu for mobile */}
           <ul>
-            <Link to="/">
-              <li className={isLinkActive('/')}>Home</li>
-            </Link>
             <Link to="/men">
               <li className={isLinkActive('/men')}>Men</li>
             </Link>
