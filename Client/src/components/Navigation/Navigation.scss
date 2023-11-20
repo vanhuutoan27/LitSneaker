@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 1300px;
+    width: 1140px;
     background: #f2f3f5a3;
     padding: 8px 24px;
     border-radius: 20px;
@@ -83,7 +83,7 @@
 
         li {
           list-style: none;
-          padding: 16px 20px 16px 40px;
+          padding: 12px 20px 12px 40px;
 
           &:hover {
             background: $primary;
@@ -129,8 +129,8 @@
 
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .navigation-container {
-    flex-direction: column;
+  .navigation-menu-mobile {
+    display: block;
   }
 }
 
