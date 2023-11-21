@@ -122,9 +122,18 @@
 /* Tablet & mobile */
 @media screen and (max-width: 991px) {
   .collection-wrapper {
+    .collection-title {
+      h2 {
+        font-size: 36px;
+      }
+    }
     .collection-container {
       .collection {
         height: 660px;
+
+        h3 {
+          font-size: 32px;
+        }
       }
     }
   }
@@ -140,7 +149,6 @@
     .collection-title {
       h2 {
         font-size: 36px;
-        line-height: 27px;
       }
     }
 
