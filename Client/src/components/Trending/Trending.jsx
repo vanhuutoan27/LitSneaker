@@ -1,8 +1,12 @@
 import React from 'react'
 
+import './Trending.scss'
+
 function Trending() {
   return (
-    <div>Trending</div>
+    <div className="trending-wrapper">
+      
+    </div>
   )
 }
 

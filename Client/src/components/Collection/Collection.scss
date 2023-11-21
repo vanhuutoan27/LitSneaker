@@ -124,7 +124,7 @@
   .collection-wrapper {
     .collection-container {
       .collection {
-        height: 525px;
+        height: 660px;
       }
     }
   }
@@ -137,6 +137,13 @@
 /* Mobile */
 @media screen and (max-width: 767px) {
   .collection-wrapper {
+    .collection-title {
+      h2 {
+        font-size: 36px;
+        line-height: 27px;
+      }
+    }
+
     .collection-container {
       flex-direction: column;
 
@@ -148,6 +155,8 @@
 
           h3 {
             bottom: 36%;
+            font-size: 32px;
+            line-height: 24px;
           }
 
           .btn {
@@ -162,6 +171,8 @@
 
             h3 {
               bottom: 36%;
+              font-size: 32px;
+              line-height: 24px;
             }
           }
         }

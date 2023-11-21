@@ -105,13 +105,14 @@
 
   // Sub-menu visibility for mobile
   .navigation-sub-menu-mobile {
-    display: none;
     width: 100%;
     background: #fff;
     margin-top: 20px;
-    transform: translateY(-10%);
-    transition: visibility 0s, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     border-radius: 12px;
+
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
 
     ul {
       a {
@@ -138,9 +139,7 @@
     }
 
     &.show {
-      display: block;
-      transform: translateY(0);
-      transition-delay: 0s;
+      max-height: 500px;
     }
   }
 }
