@@ -148,7 +148,7 @@ function Navigation() {
           </div>
         </OutsideClickHandler>
 
-        <div style={{ margin: '0 24px' }}>
+        <div style={{ margin: '0 184px' }}>
           <div
             className={`navigation-sub-menu ${isSubMenuOpen ? 'show' : ''}`}
             onMouseEnter={() => setIsSubMenuOpen(true)}
