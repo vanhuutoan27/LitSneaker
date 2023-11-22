@@ -1,0 +1,145 @@
+@import '../../App.scss';
+
+.about-wrapper {
+  padding: 120px 0;
+
+  .about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+
+    .about-left {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h4 {
+        color: #cd4113;
+        font-size: 16px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+
+      .about-title {
+        color: #070601;
+        font-size: 45px;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 55px;
+      }
+
+      .about-desc {
+        font-weight: 400;
+        font-size: 18px;
+      }
+
+      .about-btn {
+        margin-bottom: 20px;
+      }
+    }
+
+    .about-right {
+      position: relative;
+      background-image: url('../../../public/images/about.jpg');
+      width: 50%;
+      height: 420px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 12px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.36);
+        border-radius: inherit;
+        z-index: 1;
+      }
+
+      .about-play-btn {
+        height: 100%;
+        color: $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .play-btn {
+          z-index: 3;
+          font-size: 100px;
+          border-radius: 999px;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.1);
+            color: lighten($primary, 10%);
+          }
+
+          &:active {
+            color: darken($primary, 1%);
+            transform: scale(1);
+            box-shadow: 0 0 0px 4px rgba(205, 65, 19, 0.5);
+          }
+        }
+
+        span {
+          position: absolute;
+          background: $white;
+          width: 50px;
+          height: 50px;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+/* PC */
+@media screen and (max-width: 1052px) {
+}
+
+@media screen and (min-width: 992px) {
+}
+
+/* Tablet & mobile */
+@media screen and (max-width: 991px) {
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .about-wrapper {
+    .about-container {
+      flex-direction: column;
+
+      .about-left {
+        gap: 30px;
+        width: 100%;
+
+        .about-title {
+          font-size: 32px;
+          line-height: 42px;
+        }
+
+        .about-btn {
+          margin-top: 20px;
+        }
+      }
+
+      .about-right {
+        width: 100%;
+        height: 260px;
+      }
+    }
+  }
+}

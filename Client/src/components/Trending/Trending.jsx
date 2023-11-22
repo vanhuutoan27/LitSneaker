@@ -4,21 +4,20 @@ import { Link } from 'react-router-dom';
 import './Trending.scss';
 
 function Trending() {
-  // Example product data
   const products = [
     {
       ProductName: "MEN'S RUNNING SHOE",
-      image: '../images/product-1.png',
+      ImageURL: '../images/product-1.png',
       Price: '$20',
     },
     {
       ProductName: 'NIKE AIR MAX E77 SHOE',
-      image: '../images/product-2.png',
+      ImageURL: '../images/product-2.png',
       Price: '$25',
     },
     {
       ProductName: 'SIMPLE FABRIC SHOE',
-      image: '../images/product-3.png',
+      ImageURL: '../images/product-3.png',
       Price: '$30',
     },
   ];
@@ -37,14 +36,16 @@ function Trending() {
           {products.map((product) => (
             <div className="trending-product">
               <div className="trending-product-img">
-                <img src={product.image} alt={product.ProductName} />
+                <img src={product.ImageURL} alt={product.ProductName} />
               </div>
               <h3>{product.ProductName}</h3>
               <div className="trending-product-price">
                 <span className="original-price">{product.Price}</span>
               </div>
               <div className="trending-product-btn">
-                <Link className="btn">Add To Cart</Link>
+                <Link to="#!" className="btn">
+                  Add To Cart
+                </Link>
               </div>
             </div>
           ))}

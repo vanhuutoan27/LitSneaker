@@ -1,5 +1,25 @@
 @import '../../App.scss';
 
+$desktop-breakpoint: 992px;
+$tablet-breakpoint: 768px;
+$mobile-breakpoint: 767px;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == desktop {
+    @media (min-width: $desktop-breakpoint) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (min-width: $tablet-breakpoint) and (max-width: $desktop-breakpoint - 1) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media (max-width: $mobile-breakpoint) {
+      @content;
+    }
+  }
+}
+
 // Base styles for the navigation wrapper
 .navigation-wrapper {
   width: 100%;
@@ -156,8 +176,7 @@
 }
 
 // Media Queries
-/* PC */
-@media screen and (min-width: 992px) {
+@include respond-to(desktop) {
   .navigation-menu-mobile,
   .navigation-sub-menu-mobile {
     display: none;
@@ -175,15 +194,13 @@
   }
 }
 
-/* Tablet */
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@include respond-to(tablet) {
   .navigation-menu-mobile {
     display: block;
   }
 }
 
-/* Mobile */
-@media screen and (max-width: 767px) {
+@include respond-to(mobile) {
   .navigation-container {
     flex-direction: column;
   }

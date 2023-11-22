@@ -47,12 +47,16 @@ function Navigation() {
   // Determines if a link is active based on the current path
   const isLinkActive = (pathname) => (location.pathname === pathname ? 'active' : '');
 
+  function scrollOnTop() {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <div className={isMenuOpen ? 'dimmed-background' : ''}>
       <div className="navigation-wrapper">
         <div className="navigation-container content">
           <div className="navigation-logo">
-            <Link to="/">
+            <Link to="/" onClick={scrollOnTop()}>
               <img src="../images/logo/Lit Sneaker Logo5.png" alt="Lit Sneaker" width={100} />
             </Link>
           </div>
