@@ -129,12 +129,12 @@ $mobile-breakpoint: 767px;
   }
 
   // Sub-menu visibility for mobile
+  .navigation-sub-menu,
   .navigation-sub-menu-mobile {
     width: 100%;
     background: #fff;
     margin-top: 20px;
     border-radius: 12px;
-
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.5s ease-out;
@@ -166,6 +166,10 @@ $mobile-breakpoint: 767px;
     &.show {
       max-height: 500px;
     }
+  }
+
+  .navigation-sub-menu {
+    max-height: 0;
   }
 }
 

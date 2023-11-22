@@ -11,20 +11,25 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import './Navigation.scss';
 
 function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuMobileOpen, setIsMenuMobileOpen] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
   const location = useLocation();
   const menuMobileRef = useRef(null);
 
   // Toggles the state of the menu
   const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuMobileOpen(!isMenuMobileOpen);
   };
+
+  // Handlers for hover state of 'More' link
+  const handleMoreEnter = () => setIsSubMenuOpen(true);
+  const handleMoreLeave = () => setIsSubMenuOpen(false);
 
   // Adjusts menu state based on screen size
   useEffect(() => {
     const checkScreenSize = () => {
       if (window.innerWidth >= 992) {
-        setIsMenuOpen(false);
+        setIsMenuMobileOpen(false);
       }
     };
 
@@ -44,7 +49,7 @@ function Navigation() {
   }
 
   return (
-    <div className={isMenuOpen ? 'dimmed-background' : ''}>
+    <div className={isMenuMobileOpen ? 'dimmed-background' : ''}>
       <div className="navigation-wrapper">
         <div className="navigation-container content">
           <div className="navigation-logo">
@@ -69,14 +74,14 @@ function Navigation() {
             <Link to="/contact" className={isLinkActive('/contact')}>
               Contact
             </Link>
-            <Link>
+            <Link to="#!" onMouseEnter={handleMoreEnter} onMouseLeave={handleMoreLeave}>
               More <ArrowDropDownIcon className="dropdown" />
             </Link>
           </div>
           <div className="navigation-customer">
             {/* Mobile menu and icons */}
             <div className="navigation-menu-mobile" ref={menuMobileRef}>
-              {isMenuOpen ? (
+              {isMenuMobileOpen ? (
                 <CloseIcon className="navigation-icon" onClick={handleMenuClick} />
               ) : (
                 <MenuIcon className="navigation-icon" onClick={handleMenuClick} />
@@ -84,18 +89,18 @@ function Navigation() {
             </div>
 
             <div className="navigation-profile">
-              <Link>
+              <Link to="#!">
                 <FavoriteIcon className="navigation-icon" />
               </Link>
               <div className="cart-amount">
-                <Link>
+                <Link to="#!">
                   <ShoppingCartIcon className="navigation-icon" />
                 </Link>
                 <div className="amount-number">
-                  <Link>99+</Link>
+                  <Link to="#!">99+</Link>
                 </div>
               </div>
-              <Link>
+              <Link to="#!">
                 <PersonIcon className="navigation-icon" />
               </Link>
             </div>
@@ -104,11 +109,11 @@ function Navigation() {
 
         <OutsideClickHandler
           onOutsideClick={() => {
-            setIsMenuOpen(false);
+            setIsMenuMobileOpen(false);
           }}
         >
-          <div className={`navigation-sub-menu-mobile ${isMenuOpen ? 'show' : ''}`}>
-            {/* Sub-menu for mobile */}
+          {/* Navigation for mobile */}
+          <div className={`navigation-sub-menu-mobile ${isMenuMobileOpen ? 'show' : ''}`}>
             <ul>
               <Link to="/">
                 <li className={isLinkActive('/')}>Home</li>
@@ -128,18 +133,37 @@ function Navigation() {
               <Link to="/contact">
                 <li className={isLinkActive('/contact')}>Contact</li>
               </Link>
-              <Link>
+              <Link to="#!">
                 <li>Track Order</li>
               </Link>
-              <Link>
+              <Link to="#!">
                 <li>Testimonial</li>
               </Link>
-              <Link>
+              <Link to="#!">
                 <li>FAQ</li>
               </Link>
             </ul>
           </div>
         </OutsideClickHandler>
+
+        <div
+          className={`navigation-sub-menu ${isSubMenuOpen ? 'show' : ''}`}
+          onMouseEnter={() => setIsSubMenuOpen(true)}
+          onMouseLeave={() => setIsSubMenuOpen(false)}
+        >
+          {/* Sub-navigation for PC */}
+          <ul>
+            <Link to="#!">
+              <li>Track Order</li>
+            </Link>
+            <Link to="#!">
+              <li>Testimonial</li>
+            </Link>
+            <Link to="#!">
+              <li>FAQ</li>
+            </Link>
+          </ul>
+        </div>
       </div>
     </div>
   );
