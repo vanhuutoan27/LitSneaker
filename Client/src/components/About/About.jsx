@@ -9,8 +9,8 @@ function About() {
       <div className="about-container content">
         <div className="about-left">
           <h4>About Us</h4>
-          <h3 className="about-title">We Provide High Quality Shoes.</h3>
-          <p className="about-desc">
+          <h3 className="primaryText">We Provide High Quality Shoes.</h3>
+          <p className="secondaryText">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

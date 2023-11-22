@@ -6,9 +6,7 @@ import './Collection.scss';
 function Collection() {
   return (
     <div className="collection-wrapper">
-      <div className="collection-title content">
-        <h2>All Collections</h2>
-      </div>
+      <h2 className="primaryText content">All Collections</h2>
       <div class="collection-container content">
         <div class="collection collection-kids">
           <h3>Kid's Collection</h3>

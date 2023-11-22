@@ -6,6 +6,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import OutsideClickHandler from 'react-outside-click-handler';
 
 import './Navigation.scss';
 
@@ -27,20 +28,11 @@ function Navigation() {
       }
     };
 
-    const handleClickOutside = (event) => {
-      if (menuMobileRef.current && !menuMobileRef.current.contains(event.target)) {
-        // If the click event is not inside navigation-menu-mobile, hide the menu
-        setIsMenuOpen(false);
-      }
-    };
-
     window.addEventListener('resize', checkScreenSize);
-    window.addEventListener('mousedown', handleClickOutside); // Mousedown event to capture clicks outside
     checkScreenSize();
 
     return () => {
       window.removeEventListener('resize', checkScreenSize);
-      window.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
@@ -91,45 +83,63 @@ function Navigation() {
               )}
             </div>
 
-            <Link>
-              <FavoriteIcon className="navigation-icon" />
-            </Link>
-            <div className="cart-amount">
+            <div className="navigation-profile">
               <Link>
-                <ShoppingCartIcon className="navigation-icon" />
+                <FavoriteIcon className="navigation-icon" />
               </Link>
-              <div className="amount-number">
-                <Link>99+</Link>
+              <div className="cart-amount">
+                <Link>
+                  <ShoppingCartIcon className="navigation-icon" />
+                </Link>
+                <div className="amount-number">
+                  <Link>99+</Link>
+                </div>
               </div>
+              <Link>
+                <PersonIcon className="navigation-icon" />
+              </Link>
             </div>
-            <Link>
-              <PersonIcon className="navigation-icon" />
-            </Link>
           </div>
         </div>
-        <div className={`navigation-sub-menu-mobile ${isMenuOpen ? 'show' : ''}`}>
-          {/* Sub-menu for mobile */}
-          <ul>
-            <Link to="/men">
-              <li className={isLinkActive('/men')}>Men</li>
-            </Link>
-            <Link to="/women">
-              <li className={isLinkActive('/women')}>Women</li>
-            </Link>
-            <Link to="/kids">
-              <li className={isLinkActive('/kids')}>Kids</li>
-            </Link>
-            <Link to="/blog">
-              <li className={isLinkActive('/blog')}>Blog</li>
-            </Link>
-            <Link to="/contact">
-              <li className={isLinkActive('/contact')}>Contact</li>
-            </Link>
-            <Link>
-              <li>More</li>
-            </Link>
-          </ul>
-        </div>
+
+        <OutsideClickHandler
+          onOutsideClick={() => {
+            setIsMenuOpen(false);
+          }}
+        >
+          <div className={`navigation-sub-menu-mobile ${isMenuOpen ? 'show' : ''}`}>
+            {/* Sub-menu for mobile */}
+            <ul>
+              <Link to="/">
+                <li className={isLinkActive('/')}>Home</li>
+              </Link>
+              <Link to="/men">
+                <li className={isLinkActive('/men')}>Men</li>
+              </Link>
+              <Link to="/women">
+                <li className={isLinkActive('/women')}>Women</li>
+              </Link>
+              <Link to="/kids">
+                <li className={isLinkActive('/kids')}>Kids</li>
+              </Link>
+              <Link to="/blog">
+                <li className={isLinkActive('/blog')}>Blog</li>
+              </Link>
+              <Link to="/contact">
+                <li className={isLinkActive('/contact')}>Contact</li>
+              </Link>
+              <Link>
+                <li>Track Order</li>
+              </Link>
+              <Link>
+                <li>Testimonial</li>
+              </Link>
+              <Link>
+                <li>FAQ</li>
+              </Link>
+            </ul>
+          </div>
+        </OutsideClickHandler>
       </div>
     </div>
   );

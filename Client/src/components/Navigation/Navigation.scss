@@ -35,7 +35,7 @@ $mobile-breakpoint: 767px;
     justify-content: space-between;
     width: 1140px;
     background: #f2f3f5a3;
-    padding: 8px 24px;
+    padding: 4px 24px;
     border-radius: 12px;
     box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.2);
 
@@ -67,26 +67,31 @@ $mobile-breakpoint: 767px;
   // Styles for customer icons and mobile menu
   .navigation-customer {
     display: flex;
-    gap: 12px;
 
-    .cart-amount {
-      position: relative;
+    .navigation-profile {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
 
-      .amount-number {
-        position: absolute;
-        top: -10%;
-        left: 40%;
-        background: $primary;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-width: 16px;
-        width: 32px;
-        height: 18px;
-        border-radius: 99px;
-        font-size: 12px;
-        color: #fff;
-        cursor: pointer;
+      .cart-amount {
+        position: relative;
+
+        .amount-number {
+          position: absolute;
+          top: -10%;
+          left: 40%;
+          background: $primary;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 16px;
+          width: 32px;
+          height: 18px;
+          border-radius: 99px;
+          font-size: 12px;
+          color: #fff;
+          cursor: pointer;
+        }
       }
     }
 
@@ -201,7 +206,16 @@ $mobile-breakpoint: 767px;
 }
 
 @include respond-to(mobile) {
+  .navigation-wrapper {
+    position: absolute;
+  }
+
   .navigation-container {
     flex-direction: column;
+  }
+
+  .navigation-customer {
+    width: 100%;
+    justify-content: space-between;
   }
 }
