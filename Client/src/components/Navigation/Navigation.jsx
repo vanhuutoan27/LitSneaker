@@ -6,41 +6,38 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import OutsideClickHandler from 'react-outside-click-handler';
 
 import './Navigation.scss';
 
 function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuMobileOpen, setIsMenuMobileOpen] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
   const location = useLocation();
   const menuMobileRef = useRef(null);
 
   // Toggles the state of the menu
   const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuMobileOpen(!isMenuMobileOpen);
   };
+
+  // Handlers for hover state of 'More' link
+  const handleMoreEnter = () => setIsSubMenuOpen(true);
+  const handleMoreLeave = () => setIsSubMenuOpen(false);
 
   // Adjusts menu state based on screen size
   useEffect(() => {
     const checkScreenSize = () => {
       if (window.innerWidth >= 992) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    const handleClickOutside = (event) => {
-      if (menuMobileRef.current && !menuMobileRef.current.contains(event.target)) {
-        // If the click event is not inside navigation-menu-mobile, hide the menu
-        setIsMenuOpen(false);
+        setIsMenuMobileOpen(false);
       }
     };
 
     window.addEventListener('resize', checkScreenSize);
-    window.addEventListener('mousedown', handleClickOutside); // Mousedown event to capture clicks outside
     checkScreenSize();
 
     return () => {
       window.removeEventListener('resize', checkScreenSize);
-      window.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
@@ -52,7 +49,7 @@ function Navigation() {
   }
 
   return (
-    <div className={isMenuOpen ? 'dimmed-background' : ''}>
+    <div className={isMenuMobileOpen ? 'dimmed-background' : ''}>
       <div className="navigation-wrapper">
         <div className="navigation-container content">
           <div className="navigation-logo">
@@ -77,56 +74,93 @@ function Navigation() {
             <Link to="/contact" className={isLinkActive('/contact')}>
               Contact
             </Link>
-            <Link>
+            <Link to="#!" onMouseEnter={handleMoreEnter} onMouseLeave={handleMoreLeave}>
               More <ArrowDropDownIcon className="dropdown" />
             </Link>
           </div>
           <div className="navigation-customer">
             {/* Mobile menu and icons */}
             <div className="navigation-menu-mobile" ref={menuMobileRef}>
-              {isMenuOpen ? (
+              {isMenuMobileOpen ? (
                 <CloseIcon className="navigation-icon" onClick={handleMenuClick} />
               ) : (
                 <MenuIcon className="navigation-icon" onClick={handleMenuClick} />
               )}
             </div>
 
-            <Link>
-              <FavoriteIcon className="navigation-icon" />
-            </Link>
-            <div className="cart-amount">
-              <Link>
-                <ShoppingCartIcon className="navigation-icon" />
+            <div className="navigation-profile">
+              <Link to="#!">
+                <FavoriteIcon className="navigation-icon" />
               </Link>
-              <div className="amount-number">
-                <Link>99+</Link>
+              <div className="cart-amount">
+                <Link to="#!">
+                  <ShoppingCartIcon className="navigation-icon" />
+                </Link>
+                <div className="amount-number">
+                  <Link to="#!">99+</Link>
+                </div>
               </div>
+              <Link to="#!">
+                <PersonIcon className="navigation-icon" />
+              </Link>
             </div>
-            <Link>
-              <PersonIcon className="navigation-icon" />
-            </Link>
           </div>
         </div>
-        <div className={`navigation-sub-menu-mobile ${isMenuOpen ? 'show' : ''}`}>
-          {/* Sub-menu for mobile */}
+
+        <OutsideClickHandler
+          onOutsideClick={() => {
+            setIsMenuMobileOpen(false);
+          }}
+        >
+          {/* Navigation for mobile */}
+          <div className={`navigation-sub-menu-mobile ${isMenuMobileOpen ? 'show' : ''}`}>
+            <ul>
+              <Link to="/">
+                <li className={isLinkActive('/')}>Home</li>
+              </Link>
+              <Link to="/men">
+                <li className={isLinkActive('/men')}>Men</li>
+              </Link>
+              <Link to="/women">
+                <li className={isLinkActive('/women')}>Women</li>
+              </Link>
+              <Link to="/kids">
+                <li className={isLinkActive('/kids')}>Kids</li>
+              </Link>
+              <Link to="/blog">
+                <li className={isLinkActive('/blog')}>Blog</li>
+              </Link>
+              <Link to="/contact">
+                <li className={isLinkActive('/contact')}>Contact</li>
+              </Link>
+              <Link to="#!">
+                <li>Track Order</li>
+              </Link>
+              <Link to="#!">
+                <li>Testimonial</li>
+              </Link>
+              <Link to="#!">
+                <li>FAQ</li>
+              </Link>
+            </ul>
+          </div>
+        </OutsideClickHandler>
+
+        <div
+          className={`navigation-sub-menu ${isSubMenuOpen ? 'show' : ''}`}
+          onMouseEnter={() => setIsSubMenuOpen(true)}
+          onMouseLeave={() => setIsSubMenuOpen(false)}
+        >
+          {/* Sub-navigation for PC */}
           <ul>
-            <Link to="/men">
-              <li className={isLinkActive('/men')}>Men</li>
+            <Link to="#!">
+              <li>Track Order</li>
             </Link>
-            <Link to="/women">
-              <li className={isLinkActive('/women')}>Women</li>
+            <Link to="#!">
+              <li>Testimonial</li>
             </Link>
-            <Link to="/kids">
-              <li className={isLinkActive('/kids')}>Kids</li>
-            </Link>
-            <Link to="/blog">
-              <li className={isLinkActive('/blog')}>Blog</li>
-            </Link>
-            <Link to="/contact">
-              <li className={isLinkActive('/contact')}>Contact</li>
-            </Link>
-            <Link>
-              <li>More</li>
+            <Link to="#!">
+              <li>FAQ</li>
             </Link>
           </ul>
         </div>

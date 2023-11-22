@@ -26,8 +26,8 @@ function Trending() {
     <div className="trending-wrapper">
       <div className="trending-container content">
         <div className="trending-header">
-          <h2 className="trending-title">Trending Products</h2>
-          <div className="trending-header-btn">
+          <h2 className="primaryText">Trending Products</h2>
+          <div>
             <Link className="btn">Explore More</Link>
           </div>
         </div>

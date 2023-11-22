@@ -21,22 +21,15 @@
         font-weight: 400;
         text-transform: uppercase;
         letter-spacing: 5px;
+        margin-left: 12px;
       }
 
-      .about-title {
-        color: #070601;
-        font-size: 45px;
-        font-weight: 500;
-        text-transform: uppercase;
-        line-height: 55px;
-      }
-
-      .about-desc {
-        font-weight: 400;
-        font-size: 18px;
+      .primaryText {
+        margin-bottom: 0;
       }
 
       .about-btn {
+        margin-top: 40px;
         margin-bottom: 20px;
       }
     }
@@ -69,6 +62,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
 
         .play-btn {
           z-index: 3;

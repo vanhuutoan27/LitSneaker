@@ -5,17 +5,8 @@
     .trending-header {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
+      gap: 30px;
       margin-bottom: 40px;
-
-      h2 {
-        color: #070601;
-        text-transform: uppercase;
-        font-weight: 500;
-        font-size: 48px;
-        line-height: 52px;
-        letter-spacing: 2px;
-      }
     }
 
     .trending-products {
@@ -87,10 +78,6 @@
       .trending-header {
         flex-direction: column;
         text-align: center;
-
-        h2 {
-          font-size: 36px;
-        }
       }
 
       .trending-products {
@@ -98,6 +85,10 @@
 
         .trending-product {
           width: 100%;
+
+          .trending-product-img {
+            min-height: 250px;
+          }
         }
       }
     }

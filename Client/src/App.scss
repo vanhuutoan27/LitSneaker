@@ -1,7 +1,7 @@
 // Defining Variables
 $primary: #cd4113;
 $secondary: #cd4113;
-$text: #7a7a7a;
+$text: #3a3a3a;
 $black: #070601;
 $white: #eeeeff;
 
@@ -65,18 +65,22 @@ a {
 
 // Text Classes
 .primaryText {
-  color: $primary;
-  font-weight: bold;
-  font-size: 2rem;
+  color: $black;
+  font-size: 45px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 55px;
+  margin-bottom: 20px;
 }
 
 .secondaryText {
-  color: $secondary;
-  font-size: 1.4rem;
+  color: $text;
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .content {
-  width: 1140px;
+  width: 1100px;
   max-width: calc(100% - 48px);
   margin-left: auto;
   margin-right: auto;
@@ -115,26 +119,22 @@ a {
 
 // Media Queries
 @media (min-width: 1536px) {
-  .innerWidth {
-    max-width: 1280px;
-    margin: auto;
-  }
 }
 
 @media (min-width: 640px) {
-  .paddings {
-    padding: 4rem;
-  }
 }
 
 @media (min-width: 1280px), (min-width: 768px) {
-  .paddings {
-    padding: 2rem;
-  }
 }
 
 @media (max-width: 640px) {
   .primaryText {
-    font-size: 1.5rem;
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .secondaryText {
+    font-weight: 400;
+    font-size: 16px;
   }
 }

@@ -3,18 +3,6 @@
 .collection-wrapper {
   padding: 120px 0;
 
-  .collection-title {
-    h2 {
-      color: #070601;
-      text-transform: uppercase;
-      font-weight: 500;
-      font-size: 48px;
-      line-height: 52px;
-      letter-spacing: 2px;
-      margin-bottom: 40px;
-    }
-  }
-
   .collection-container {
     display: flex;
     justify-content: space-between;
@@ -47,18 +35,6 @@
       &.collection-kids {
         background-image: url('../../../public/images/kids.jpg');
 
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background: rgba(0, 0, 0, 0.36);
-          border-radius: inherit;
-          z-index: 1;
-        }
-
         h3 {
           bottom: 18%;
           left: 9%;
@@ -79,18 +55,6 @@
         .collection-women {
           width: 100%;
 
-          &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.36);
-            border-radius: inherit;
-            z-index: 1;
-          }
-
           h3 {
             bottom: 36%;
             left: 9%;
@@ -110,6 +74,22 @@
           background-image: url('../../../public/images/women.jpg');
         }
       }
+
+      &.collection-kids,
+      .collection-men,
+      .collection-women {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.36);
+          border-radius: inherit;
+          z-index: 1;
+        }
+      }
     }
   }
 }
@@ -122,11 +102,6 @@
 /* Tablet & mobile */
 @media screen and (max-width: 991px) {
   .collection-wrapper {
-    .collection-title {
-      h2 {
-        font-size: 36px;
-      }
-    }
     .collection-container {
       .collection {
         height: 660px;
@@ -146,12 +121,8 @@
 /* Mobile */
 @media screen and (max-width: 767px) {
   .collection-wrapper {
-    .collection-title {
-      h2 {
-        font-size: 36px;
-      }
-    }
-
+    padding-bottom: 0;
+    
     .collection-container {
       flex-direction: column;
 
@@ -163,12 +134,15 @@
 
           h3 {
             bottom: 36%;
-            font-size: 32px;
-            line-height: 24px;
+            font-size: 28px;
+            line-height: 20px;
           }
 
           .btn {
             bottom: 7%;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 12px 30px;
           }
         }
 
@@ -179,8 +153,14 @@
 
             h3 {
               bottom: 36%;
-              font-size: 32px;
-              line-height: 24px;
+              font-size: 28px;
+              line-height: 20px;
+            }
+
+            .btn {
+              font-size: 16px;
+              font-weight: 500;
+              padding: 12px 30px;
             }
           }
         }
