@@ -53,7 +53,7 @@ function Navigation() {
       <div className="navigation-wrapper">
         <div className="navigation-container content">
           <div className="navigation-logo">
-            <Link to="/" onClick={scrollOnTop()}>
+            <Link to="/" onClick={scrollOnTop}>
               <img src="../images/logo/Lit Sneaker Logo5.png" alt="Lit Sneaker" width={100} />
             </Link>
           </div>
@@ -74,7 +74,7 @@ function Navigation() {
             <Link to="/contact" className={isLinkActive('/contact')}>
               Contact
             </Link>
-            <Link to="#!" onMouseEnter={handleMoreEnter} onMouseLeave={handleMoreLeave}>
+            <Link onMouseEnter={handleMoreEnter} onMouseLeave={handleMoreLeave}>
               More <ArrowDropDownIcon className="dropdown" />
             </Link>
           </div>
@@ -113,56 +113,60 @@ function Navigation() {
           }}
         >
           {/* Navigation for mobile */}
-          <div className={`navigation-sub-menu-mobile ${isMenuMobileOpen ? 'show' : ''}`}>
+          <div style={{ margin: '0 24px' }}>
+            <div className={`navigation-sub-menu-mobile ${isMenuMobileOpen ? 'show' : ''}`}>
+              <ul>
+                <Link to="/">
+                  <li className={isLinkActive('/')}>Home</li>
+                </Link>
+                <Link to="/men">
+                  <li className={isLinkActive('/men')}>Men</li>
+                </Link>
+                <Link to="/women">
+                  <li className={isLinkActive('/women')}>Women</li>
+                </Link>
+                <Link to="/kids">
+                  <li className={isLinkActive('/kids')}>Kids</li>
+                </Link>
+                <Link to="/blog">
+                  <li className={isLinkActive('/blog')}>Blog</li>
+                </Link>
+                <Link to="/contact">
+                  <li className={isLinkActive('/contact')}>Contact</li>
+                </Link>
+                <Link to="/track-order">
+                  <li>Track Order</li>
+                </Link>
+                <Link to="/testimonial">
+                  <li>Testimonial</li>
+                </Link>
+                <Link to="/faq">
+                  <li>FAQ</li>
+                </Link>
+              </ul>
+            </div>
+          </div>
+        </OutsideClickHandler>
+
+        <div style={{ margin: '0 184px' }}>
+          <div
+            className={`navigation-sub-menu ${isSubMenuOpen ? 'show' : ''}`}
+            onMouseEnter={() => setIsSubMenuOpen(true)}
+            onMouseLeave={() => setIsSubMenuOpen(false)}
+          >
+            {/* Sub-navigation for PC */}
             <ul>
-              <Link to="/">
-                <li className={isLinkActive('/')}>Home</li>
-              </Link>
-              <Link to="/men">
-                <li className={isLinkActive('/men')}>Men</li>
-              </Link>
-              <Link to="/women">
-                <li className={isLinkActive('/women')}>Women</li>
-              </Link>
-              <Link to="/kids">
-                <li className={isLinkActive('/kids')}>Kids</li>
-              </Link>
-              <Link to="/blog">
-                <li className={isLinkActive('/blog')}>Blog</li>
-              </Link>
-              <Link to="/contact">
-                <li className={isLinkActive('/contact')}>Contact</li>
-              </Link>
-              <Link to="#!">
+              <Link to="/track-order">
                 <li>Track Order</li>
               </Link>
-              <Link to="#!">
+              <Link to="/testimonial">
                 <li>Testimonial</li>
               </Link>
-              <Link to="#!">
+              <Link to="/faq">
                 <li>FAQ</li>
               </Link>
             </ul>
           </div>
-        </OutsideClickHandler>
-
-        <div
-          className={`navigation-sub-menu ${isSubMenuOpen ? 'show' : ''}`}
-          onMouseEnter={() => setIsSubMenuOpen(true)}
-          onMouseLeave={() => setIsSubMenuOpen(false)}
-        >
-          {/* Sub-navigation for PC */}
-          <ul>
-            <Link to="#!">
-              <li>Track Order</li>
-            </Link>
-            <Link to="#!">
-              <li>Testimonial</li>
-            </Link>
-            <Link to="#!">
-              <li>FAQ</li>
-            </Link>
-          </ul>
         </div>
       </div>
     </div>

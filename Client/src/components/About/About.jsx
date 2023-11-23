@@ -23,11 +23,26 @@ function About() {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 1000,
-    height: 600,
     bgcolor: 'background.paper',
     boxShadow: 24,
-    p: 2,
+
+    '@media (min-width:992px)': {
+      width: 1000,
+      height: 600,
+      p: 2,
+    },
+
+    '@media (max-width:991px)': {
+      width: 800,
+      height: 500,
+      p: 2,
+    },
+
+    '@media (max-width:767px)': {
+      width: 350,
+      height: 600,
+      p: 1,
+    },
   };
 
   return (
