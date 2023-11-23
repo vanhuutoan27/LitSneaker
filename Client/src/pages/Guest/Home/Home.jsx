@@ -6,6 +6,7 @@ import Collection from '../../../components/Collection/Collection';
 import Trending from '../../../components/Trending/Trending';
 import About from '../../../components/About/About';
 import Feature from '../../../components/Feature/Feature';
+import Feedback from '../../../components/Feedback/Feedback';
 import Blog from '../../../components/Blog/Blog';
 import Subscribe from '../../../components/Subscribe/Subscribe';
 
@@ -17,6 +18,7 @@ function Home() {
       <Trending />
       <About />
       <Feature />
+      <Feedback />
       <Blog />
       <Subscribe />
     </Layout>

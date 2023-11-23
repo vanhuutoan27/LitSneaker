@@ -1,0 +1,115 @@
+@import '../../App.scss';
+
+.subscribe-wrapper {
+  padding: 120px 0;
+
+  .subscribe-container {
+    background: $primary;
+    padding: 80px;
+    border-radius: 12px;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+
+    .subscribe-left {
+      width: 60%;
+
+      .primaryText {
+        color: $white;
+        font-size: 36px;
+      }
+
+      .secondaryText {
+        color: $white;
+      }
+    }
+
+    .subscribe-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .subscribe-input {
+        display: flex;
+        gap: 10px;
+
+        input {
+          background: #fff;
+          font-size: 18px;
+          min-height: 59px;
+          padding: 7px 20px;
+          border-radius: 12px;
+          outline: none;
+          border: none;
+        }
+
+        .btn {
+          background: $black;
+
+          &:hover {
+            background: lighten($black, 5%);
+            color: lighten($white, 10%);
+          }
+
+          &:active {
+            background: darken($black, 10%);
+            color: darken($white, 1%);
+            box-shadow: 0 0 0px 4px rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+/* PC */
+@media screen and (min-width: 992px) {
+}
+
+/* Tablet & mobile */
+@media screen and (max-width: 991px) {
+  .subscribe-wrapper {
+    .subscribe-container {
+      padding: 40px;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+
+      .subscribe-left {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .subscribe-wrapper {
+    padding: 60px 0;
+
+    .subscribe-container {
+      padding: 20px;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+
+      .subscribe-left {
+        width: 100%;
+      }
+
+      .subscribe-right {
+        width: 100%;
+
+        .subscribe-input {
+          width: 100%;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

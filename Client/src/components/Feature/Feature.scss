@@ -13,6 +13,7 @@
       margin-top: 40px;
 
       .feature-left {
+        width: 50%;
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -67,6 +68,10 @@
       }
 
       .feature-content {
+        .feature-left {
+          width: 100%;
+        }
+
         .feature-right {
           img {
             display: none;
