@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\github\\Fontend\\LitSneaker\\Server\\LitSneaker.csproj": {}
+    "D:\\github\\LitSneaker\\Server\\LitSneaker.csproj": {}
   },
   "projects": {
-    "D:\\github\\Fontend\\LitSneaker\\Server\\LitSneaker.csproj": {
+    "D:\\github\\LitSneaker\\Server\\LitSneaker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\github\\Fontend\\LitSneaker\\Server\\LitSneaker.csproj",
+        "projectUniqueName": "D:\\github\\LitSneaker\\Server\\LitSneaker.csproj",
         "projectName": "LitSneaker",
-        "projectPath": "D:\\github\\Fontend\\LitSneaker\\Server\\LitSneaker.csproj",
+        "projectPath": "D:\\github\\LitSneaker\\Server\\LitSneaker.csproj",
         "packagesPath": "C:\\Users\\wew91\\.nuget\\packages\\",
-        "outputPath": "D:\\github\\Fontend\\LitSneaker\\Server\\obj\\",
+        "outputPath": "D:\\github\\LitSneaker\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

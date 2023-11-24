@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NdmYFj2QJNJuVifEynL4elgYP/ow0opErJpAfb8FP8APy9ZdvonkOnFg56FRGPkwuzC6tizN5rWFnu4wFdcJSA==",
+  "dgSpecHash": "NBUvaEdMXfKaT/BYeMD59VplAqGY1ThMEHs1onc8p2TBxd9AeVtyBOR9oN3OCWUYcJI9uQAb84M208kj1AMBgA==",
   "success": true,
-  "projectFilePath": "D:\\github\\Fontend\\LitSneaker\\Server\\LitSneaker.csproj",
+  "projectFilePath": "D:\\github\\LitSneaker\\Server\\LitSneaker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wew91\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\wew91\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

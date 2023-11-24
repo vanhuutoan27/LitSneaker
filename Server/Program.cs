@@ -1,8 +1,12 @@
-using LitSneaker.Models;
+using LitSneaker.Repository.Interface;
+using LitSneaker.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using LitSneaker.Models;
+using Microsoft.AspNetCore.Hosting;
+using LitSneaker.Helper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,10 +18,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 #region Add Scoped
 //builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 #endregion
 // scope de khong can phai new lai
 
-builder.Services.AddAutoMapper(typeof(Program));
+//builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(Program), typeof(ApplicationMapper));
 
 
 builder.Services.AddCors(options =>
@@ -45,8 +52,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-//builder.Services.AddDbContext<LitSneakerDbContext>(options =>
-//options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<LitSneakerDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
