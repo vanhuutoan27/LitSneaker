@@ -1,6 +1,8 @@
 @import '../../App.scss';
 
 .trending-wrapper {
+  padding: 120px 0;
+
   .trending-container {
     .trending-header {
       display: flex;
@@ -85,6 +87,8 @@
 /* Mobile */
 @media screen and (max-width: 767px) {
   .trending-wrapper {
+    padding: 40px 0;
+
     .trending-container {
       .trending-header {
         flex-direction: column;
