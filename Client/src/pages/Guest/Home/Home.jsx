@@ -1,14 +1,14 @@
 import React from 'react';
 
 import Layout from '../../../utils/Layout';
-import Hero from '../../../components/Hero/Hero';
-import Collection from '../../../components/Collection/Collection';
-import Trending from '../../../components/Trending/Trending';
-import About from '../../../components/About/About';
-import Feature from '../../../components/Feature/Feature';
-import Feedback from '../../../components/Feedback/Feedback';
-import Blog from '../../../components/Blog/Blog';
-import Subscribe from '../../../components/Subscribe/Subscribe';
+import Hero from './Hero/Hero';
+import Collection from './Collection/Collection';
+import Trending from './Trending/Trending';
+import About from './About/About';
+import Feature from './Feature/Feature';
+import Feedback from './Feedback/Feedback';
+import Blog from './Blog/Blog';
+import Subscribe from './Subscribe/Subscribe';
 
 function Home() {
   return (

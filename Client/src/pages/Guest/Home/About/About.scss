@@ -1,4 +1,4 @@
-@import '../../App.scss';
+@import '../../../../App.scss';
 
 .about-wrapper {
   padding: 120px 0;
@@ -36,7 +36,7 @@
 
     .about-right {
       position: relative;
-      background-image: url('../../../public/images/about.jpg');
+      background-image: url('../../../../../public/images/about.jpg');
       width: 50%;
       height: 420px;
       background-position: center;

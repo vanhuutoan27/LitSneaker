@@ -1,4 +1,4 @@
-@import '../../App.scss';
+@import '../../../../App.scss';
 
 .collection-wrapper {
   padding: 120px 0;
@@ -33,7 +33,7 @@
       }
 
       &.collection-kids {
-        background-image: url('../../../public/images/kids.jpg');
+        background-image: url('../../../../../public/images/kids.jpg');
 
         h3 {
           bottom: 18%;
@@ -67,11 +67,11 @@
         }
 
         .collection-men {
-          background-image: url('../../../public/images/men.jpg');
+          background-image: url('../../../../../public/images/men.jpg');
         }
 
         .collection-women {
-          background-image: url('../../../public/images/women.jpg');
+          background-image: url('../../../../../public/images/women.jpg');
         }
       }
 
