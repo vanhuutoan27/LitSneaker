@@ -7,6 +7,7 @@ using System.Text;
 using LitSneaker.Models;
 using Microsoft.AspNetCore.Hosting;
 using LitSneaker.Helper;
+using LitSneaker.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,6 +55,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddDbContext<LitSneakerDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//builder.Services.AddScoped<SearchUtility>();
 
 var app = builder.Build();
 
