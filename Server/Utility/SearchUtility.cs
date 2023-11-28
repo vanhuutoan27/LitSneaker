@@ -1,4 +1,7 @@
 ﻿using LitSneaker.Models;
+using SQLitePCL;
+using System.Data.Entity;
+using System.Reflection;
 
 namespace LitSneaker.Utility
 {
@@ -9,9 +12,12 @@ namespace LitSneaker.Utility
         {
             _context = context;
         }
-        public  string generateId(string tableName){
+        public string GenerateId( string tableName)
+        {
             Console.WriteLine("sdasddsdasdds");
-            var dbSetType = _context.GetType();
+             var dbSetType = _context.GetType();
+            //var dbSetType = typeof(_cont);
+
             var property = dbSetType.GetProperty(tableName);
             if (property == null)
             {
@@ -25,7 +31,60 @@ namespace LitSneaker.Utility
 
 
             //test ham
-           
+
+        }
+
+        /*  public string GenerateId<TEntity>(LitSneakerDbContext  dbSet) where TEntity : class
+          {
+              Console.WriteLine("sdasddsdasdds");
+
+              if (dbSet == null)
+              {
+                  throw new ArgumentNullException(nameof(dbSet));
+              }
+
+              var tableList = dbSet.;
+
+              int newId = tableList.Count + 1;
+              return newId.ToString();
+          }
+  */
+
+
+        public bool SearchUsername(string username) {
+            var user = _context.TbAccounts
+                    .FirstOrDefault(p => p.Username == username);
+            if (user == null) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        public bool SearchEmail(string Email)
+        {
+            var user = _context.Users
+                    .FirstOrDefault(p => p.Email == Email);
+            if (user == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public bool SearchPhone(string phone)
+        {
+            var user = _context.Users
+                    .FirstOrDefault(p => p.Phone == phone);
+            if (user == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
     class Program
@@ -46,8 +105,8 @@ namespace LitSneaker.Utility
                 {
                     var searchUtils = new SearchUtility(context);
 
-                    var generatedId = searchUtils.generateId(tableName);
-                    Console.WriteLine($"Generated ID for {tableName}: {generatedId}");
+                    //var generatedId = searchUtils.generateId(tableName);
+                    //Console.WriteLine($"Generated ID for {tableName}: {generatedId}");
                 }
             }
             catch (ArgumentException ex)
